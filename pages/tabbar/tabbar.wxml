@@ -1,0 +1,16 @@
+<index wx:if="{{PageCur=='index'}}"></index>
+<mine wx:if="{{PageCur=='mine'}}"></mine>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="index">
+    <view class='cuIcon-cu-image'>
+      <image src="/image/tabbar/index{{PageCur=='index'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='index'?'text-green':'text-gray'}}">主页</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="mine">
+    <view class='cuIcon-cu-image'>
+      <image src="/image/tabbar/mine{{PageCur=='mine'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='mine'?'text-green':'text-gray'}}">我</view>
+  </view>
+</view>

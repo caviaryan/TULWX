@@ -1,0 +1,12 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+	<view slot="content">联邦制药</view>
+</cu-custom>
+<view class="imagesize">
+	<image src="/image/Solgen.png"></image>
+</view>
+<view class="BtnSize">
+	<button class='authBtn' type='primary' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" style=" background-color: rgb(216,40,32);box-shadow: 0px 3px 3px 3px rgb(238, 203, 203)">
+		<image src="/image/wei_login.png" class="btnImg"></image>
+		<view>授权登录</view>
+	</button>
+</view>

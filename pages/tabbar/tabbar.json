@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "index": "/pages/index/index",
+    "mine": "/pages/mine/mine"
+  }
+}
