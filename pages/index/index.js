@@ -3,6 +3,7 @@ Page({
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
+    ColorList: app.globalData.ColorList,  
 
     PageCur: 'index',
     userInfo: {},
@@ -54,21 +55,20 @@ Page({
     Tabs_Menu: [{
         icon: 'tag',
         value: '7.8 mmol/l',
-        date: '2020-04-24',
-        time: '18:00'
+        date: '2020-04-24 18:00',
+        time: '晚餐前'
       }, {
         icon: 'tag',
         value: '9.2 mmol/l',
-        date: '2020-04-24',
-        time: '12:00'
+        date: '2020-04-24 12:00',
+        time: '中餐前'
       },
       {
         icon: 'tag',
         value: '3.0 mmol/l',
-        date: '2020-04-24',
-        time: '08:00'
-      }
-    ],
+        date: '2020-04-24 07:00',
+        time: '早餐前'
+      }],
     TabCur: 0,
     scrollLeft: 0,
     userInfo: {},
@@ -85,14 +85,9 @@ Page({
 
         Tabs_Menu: [{
           icon: 'tag',
-          value: '60mmHg',
-          date: '2020-04-24',
-          time: '17:00'
-        }, {
-          icon: 'tag',
-          value: '80mmHg',
-          date: '2020-04-24',
-          time: '08:00'
+          value: '7.8 mmol/l',
+          date: '2020-04-24 18:00',
+          time: '晚餐前'
         }]
 
       })
@@ -101,9 +96,14 @@ Page({
 
         Tabs_Menu: [{
           icon: 'tag',
-          value: '416umol/l',
-          date: '2020-04-24',
-          time: '18:00'
+          value: '7.8 mmol/l',
+          date: '2020-04-24 18:00',
+          time: '晚餐前'
+        }, {
+          icon: 'tag',
+          value: '9.2 mmol/l',
+          date: '2020-04-24 12:00',
+          time: '中餐前'
         }]
       })
 
@@ -112,21 +112,21 @@ Page({
         Tabs_Menu: [{
             icon: 'tag',
             value: '7.8 mmol/l',
-            date: '2020-04-24',
-            time: '18:00'
-          }, {
+            date: '2020-04-24 18:00',
+            time: '晚餐前'
+          },
+          {
             icon: 'tag',
             value: '9.2 mmol/l',
-            date: '2020-04-24',
-            time: '12:00'
+            date: '2020-04-24 12:00',
+            time: '中餐前'
           },
           {
             icon: 'tag',
             value: '3.0 mmol/l',
-            date: '2020-04-24',
-            time: '08:00'
-          }
-        ]
+            date: '2020-04-24 07:00',
+            time: '早餐前'
+          }]
       })
     }
   }

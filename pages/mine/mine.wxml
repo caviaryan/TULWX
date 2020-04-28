@@ -1,16 +1,16 @@
 <scroll-view scroll-y class="scrollPage">
-<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
-	<view slot="content">会员中心</view>
-</cu-custom>
+	<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+		<view slot="content">会员中心</view>
+	</cu-custom>
 	<view class="cu-card case {{isCard?'no-card':''}}">
 		<view class="cu-item shadow">
 			<view class="padding-sm">
 				<view class="bg-gradual-blue padding radius text-center shadow-blur">
-				<view class="padding-lg">
-						<view  class="cu-avatar round lg myavatar">
-						  <open-data type="userAvatarUrl"></open-data>
+					<view class="padding-lg">
+						<view class="cu-avatar round lg myavatar">
+							<open-data type="userAvatarUrl"></open-data>
 						</view>
-						</view>
+					</view>
 					<view class="padding-xs">
 						<open-data type="userNickName"></open-data>
 					</view>
@@ -35,9 +35,9 @@
 			</view>
 		</view>
 	</view>
-	<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-		<view class="cu-item arrow">
-			<navigator class="content" url="/pages/emp/emp" hover-class="none">
+	<view class="cu-list menu card-menu margin-top-xs margin-bottom-xl shadow-lg radius">
+		<view class="cu-item arrow" bindtap="showModal" data-target="Modal">
+			<navigator class="content" url="../emp/empshow" hover-class="none">
 				<text class="cuIcon-peoplefill text-blue"></text>
 				<text class="text-grey">个人信息</text>
 			</navigator>

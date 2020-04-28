@@ -1,46 +1,89 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
 	<view slot="content">个人信息</view>
 </cu-custom>
-<form>
+<form bindsubmit="formSubmit">
 	<view class="cu-bar bg-white solid-bottom margin-top">
 		<view class="action">
-			<text class="cuIcon-titles text-orange "></text> 完善个人信息
+			<text class="cuIcon-titles text-orange"></text> {{titleshow?"完善个人信息":"修改个人信息"}}
 		</view>
 	</view>
 	<view class="cu-form-group">
+		<text class="text-red margin-lr-xs">*</text>
 		<view class="title">姓名</view>
-		<input placeholder="请输入姓名"></input>
+		<input placeholder="请输入姓名" name="FUserName" value="{{FUserName}}"></input>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">年龄</view>
-		<input placeholder="请输入年龄"></input>
+		<text class="text-red margin-lr-xs">*</text>
+		<view class="title">性别</view>
+		<picker bindchange="bindSexChange" value="{{index}}" range="{{sex}}" name="FSex">
+			<view class="picker">
+				{{sex[index]}}
+			</view>
+		</picker>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">手机号</view>
-		<input placeholder="手机号" value="{{tel}}"></input>
+		<text class="text-red margin-lr-xs">*</text>
+		<view class="title">
+			电话</view>
+		<input placeholder="请输入电话" value="{{tel}}" type="number" name="FTel"></input>
+		<view class="cu-capsule radius" bindtap="getTel">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">身份证号</view>
-		<input placeholder="身份证号"></input>
+		<text class="text-red margin-lr-xs"></text>
+		<view class="title">生日</view>
+		<picker mode="date" value="{{sbdate?bdate:''}}" bindchange="bindBDateChange" placeholder='选择日期' name="FBDate">
+      <view class="picker">
+				{{sbdate?bdate:"请选择"}}
+			</view>
+		</picker>
 	</view>
-	<view class="cu-form-group margin-top">
-		<view class="title">所在地</view>
-		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+	<view class="cu-form-group">
+		<text class="text-red margin-lr-xs"></text>
+		<view class="title">身高(厘米)</view>
+		<input placeholder="请输入身高" type="number" name="FHight" value="{{FHight}}"></input>
+	</view>
+	<view class="cu-form-group">
+		<text class="text-red margin-lr-xs"></text>
+		<view class="title">体重(公斤)</view>
+		<input placeholder="请输入体重" type="number" name="FWeight" value="{{FWeight}}"></input>
+	</view>
+
+	<view class="cu-form-group">
+		<text class="text-red margin-lr-xs">*</text>
+		<view class="title">地址</view>
+		<picker mode="region" bindchange="bindAdressChange" value="{{region}}" name="FAddress">
 			<view class="picker">
 				{{region[0]}}，{{region[1]}}，{{region[2]}}
 			</view>
 		</picker>
+		<text class="cuIcon-locationfill text-green cu-btn.icon.sm" bindtap="getLocation"></text>
 	</view>
 	<view class="cu-form-group">
+		<text class="text-red margin-lr-xs">*</text>
 		<view class="title">糖尿病类型</view>
-		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+		<picker bindchange="bindHBTypeChange" value="{{hbType[hbType_index].id}}" data-selecthx="{{hbType[hx_index].name}}" range="{{hbType}}" range-key="{{'name'}}" name="FHBType">
 			<view class="picker">
-				{{index?picker[index]:'...'}}
+				{{hbType[hbType_index].name}}
 			</view>
 		</picker>
 	</view>
-	<view class="padding-xl margin-top">
-		<button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="submitUser">
-			<text class="cuIcon-friendaddfill" ></text> 提交信息</button>
+
+	<view class="cu-form-group">
+		<text class="text-red margin-lr-xs">*</text>
+		<view class="title">确诊年份</view>
+		<picker mode="date" fields="year"  name="FHBYear" placeholder='选择年份' bindchange="bindYearChange" value="{{hbyear}}">
+			{{shbyear?hbyear:"请选择"}}
+		</picker>
+	</view>
+	<view class="padding">
+		<button class="cu-btn block bg-blue margin-tb-sm lg" formType="submit" >
+			<text class="cuIcon-friendaddfill"  ></text>{{show?"提交信息":"提交更改"}}</button>
 	</view>
 </form>

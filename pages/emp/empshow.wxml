@@ -1,0 +1,60 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="content">个人信息</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom margin-top">
+	<view class="action">
+		<text class="cuIcon-titles text-orange "></text> 查看个人信息
+	</view>
+</view>
+
+<view class="cu-card">
+	<view class="cu-item shadow">
+		<view class="cu-form-group">
+			<view class="title">姓名</view>
+			<input disabled value="{{FUserName}}"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">性别</view>
+			<input disabled value="{{FSex}}"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">电话</view>
+			<input disabled value="{{FTel}}"></input>
+			<view class="cu-capsule radius">
+				<view class="cu-tag bg-blue">
+					+86
+				</view>
+				<view class="cu-tag line-blue">
+					中国大陆
+				</view>
+			</view>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">生日</view>
+			<input disabled value="{{FBDate}}"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">地址</view>
+			<input disabled value="{{FAddress}}"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">身高(厘米)</view>
+			<input disabled value="{{FHight}}"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">体重(公斤)</view>
+			<input disabled value="{{FWeight}}"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">糖尿病类型</view>
+			<input disabled value="{{FHBType}}"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">确认年份</view>
+			<input disabled value="{{FHBYear}}"></input>
+		</view>
+	</view>
+</view>
+<button class="cu-btn block bg-blue margin-tb-sm lg" formType="submit" style="width:80%;display:flex;margin:0 auto" bindtap="toEdit">
+	<text class="cuIcon-friendaddfill" ></text>更改信息
+</button>

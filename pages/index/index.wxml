@@ -8,7 +8,7 @@
 			<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
 		</swiper-item>
 	</swiper>
-	<view class="cu-bar bg-white solid-bottom margin-top">
+	<view class="cu-bar bg-gradual-blue solid-bottom">
 		<view class="action">
 			<text class="cuIcon-titles text-orange "></text> 贴心服务
 		</view>
@@ -25,7 +25,7 @@
 			</navigator>
 		</view>
 	</view>
-	<view class="cu-bar bg-white margin-top solid-bottom">
+	<view class="cu-bar bg-gradual-blue margin-top solid-bottom">
 		<view class="action">
 			<text class="cuIcon-titles text-orange"></text> 血糖数据
 		</view>
@@ -35,21 +35,20 @@
 			<view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{Tabs}}" wx:key="key" bindtap="tabSelect" data-id="{{index}}">
 				{{item.name}}
 			</view>
-		</view>
-		<view class="cu-list menu sm-border" wx:for="{{Tabs_Menu}}" wx:key="key">
-			<view class="cu-item">
+		</view> 
+	</scroll-view>
+		<view class="cu-list menu sm-border">
+			<view class="cu-item" wx:for="{{Tabs_Menu}}" wx:key="key">
 				<view class="content">
 					<text class="cuIcon-{{item.icon}} text-red"></text>
-					<text class="text-grey">{{item.value}}</text>
-					<view class="text-gray text-sm">
-						<text class="margin-right-xl"></text>{{item.date}}
-					</view>
+					<text class="text-orange">{{item.value}}</text>
+					<text class="margin-right-xl"></text><text class="text-grey">{{item.date}}</text>
 				</view>
 				<view class="action">
 					<view class="cu-tag round bg-green light">{{item.time}}
 					</view>
 				</view>
-			</view>			
+			</view>
 		</view>
-	</scroll-view>
+		<view class="cu-tabbar-height"></view>
 </scroll-view>
