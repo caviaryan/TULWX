@@ -33,31 +33,33 @@ Page({
     console.log(app.globalData.tel)
     var that=this
     var pages = getCurrentPages();
-    var prevpage = pages[pages.length - 2];
-    if (prevpage) {
-      if (prevpage.route == "pages/emp/empshow") {
-        that.setData({
-          show: false,
-          titleshow: false
-        })
-      }
-      if (app.globalData.userInfo) {
-        console.log(app.globalData)
-        var str = app.globalData.userInfo.FAddress.split(",")
-        var date = app.globalData.userInfo.FBDate
-        that.setData({
-          FUserName: app.globalData.userInfo.FUserName,
-          index: app.globalData.userInfo.FSex,
-          sbdate: date ? util.date_time(date) : '',
-          bdate: date ? util.date_time(date) : '',
-          tel: app.globalData.userInfo.FTel,
-          region: [str[0], str[1], str[2]],
-          FHight: app.globalData.userInfo.FHight,
-          FWeight: app.globalData.userInfo.FWeight,
-          hbType_index: app.globalData.userInfo.FHBType - 1,
-          shbyear: app.globalData.userInfo.FHBYear,
-          hbyear: app.globalData.userInfo.FHBYear
-        })
+    if(pages.length!=1){
+      var prevpage = pages[pages.length - 2];
+      if (prevpage) {
+        if (prevpage.route == "pages/emp/empshow") {
+          that.setData({
+            show: false,
+            titleshow: false
+          })
+        }
+        if (app.globalData.userInfo) {
+          console.log(app.globalData)
+          var str = app.globalData.userInfo.FAddress.split(",")
+          var date = app.globalData.userInfo.FBDate
+          that.setData({
+            FUserName: app.globalData.userInfo.FUserName,
+            index: app.globalData.userInfo.FSex,
+            sbdate: date ? util.date_time(date) : '',
+            bdate: date ? util.date_time(date) : '',
+            tel: app.globalData.userInfo.FTel,
+            region: [str[0], str[1], str[2]],
+            FHight: app.globalData.userInfo.FHight,
+            FWeight: app.globalData.userInfo.FWeight,
+            hbType_index: app.globalData.userInfo.FHBType - 1,
+            shbyear: app.globalData.userInfo.FHBYear,
+            hbyear: app.globalData.userInfo.FHBYear
+          })
+        }
       }
     }
     var that = this
